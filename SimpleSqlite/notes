@@ -1,0 +1,24 @@
+1. type in the following command –
+
+sudo apt-get install sqlite3 libsqlite3-dev
+
+2. After installation check installation, sqlite terminal will give you a prompt and version info –
+
+naved@neo:~$ sqlite3
+
+SQLite version 3.8.2 2013-12-06 14:53:30
+Enter &quot;.help&quot; for instructions
+Enter SQL statements terminated with a &quot;;&quot;
+sqlite&gt;
+
+3. To quit –
+
+sqlite&gt; .quit
+
+4. Go to desired folder and create database –
+
+naved@neo:~$ sqlite3 database_name.db
+
+It’ll create database_name.db in the folder you’ve given the command.
+
+5. To check whether the database has been created give the following command in sqlite3 terminal –
