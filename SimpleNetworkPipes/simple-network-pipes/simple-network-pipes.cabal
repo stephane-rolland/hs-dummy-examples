@@ -1,0 +1,55 @@
+name:                simple-network-pipes
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/githubuser/simple-network-pipes
+license:             BSD3
+license-file:        LICENSE
+author:              Author name here
+maintainer:          example@example.com
+copyright:           2017 Author name here
+category:            Acme
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+tested-with:         GHC == 7.10.2
+
+library
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+  hs-source-dirs:      src
+  exposed-modules:     Server
+                    ,  Client
+                    ,  Command
+  build-depends:       base >= 4.7 && < 5
+                    ,  pipes
+                    ,  pipes-network
+                    ,  pipes-bytestring
+                    ,  pipes-binary
+                    ,  network
+                    ,  network-simple
+                    ,  binary
+                    ,  pipes-parse
+
+executable simple-network-pipes
+  default-language:    Haskell2010
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  build-depends:       base
+                     , simple-network-pipes
+
+test-suite spec
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , simple-network-pipes
+                     , hspec
+                     , QuickCheck
+
+source-repository head
+  type:     git
+  location: https://github.com/githubuser/simple-network-pipes

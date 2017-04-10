@@ -1,0 +1,10 @@
+flags: {}
+extra-package-dbs: []
+packages:
+- '.'
+extra-deps:
+- pipes-4.1.9
+- pipes-binary-0.4.1
+- pipes-network-0.6.4.1
+- pipes-safe-2.2.4
+resolver: lts-8.8
