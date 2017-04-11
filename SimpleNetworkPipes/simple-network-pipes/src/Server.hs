@@ -20,8 +20,10 @@ pureHandler :: C.Command -> C.Command
 pureHandler c = c
 
 -- inpure handler, to be used with PipesPremude.mapM
-sideffectHandler :: Monad m => C.Command -> m C.Command
-sideffectHandler c = return c
+sideffectHandler :: MonadIO m => C.Command -> m C.Command
+sideffectHandler c = do
+  liftIO $ putStrLn $ "received message = " ++ (show c)
+  return $ C.DoSomething 0
 
 main :: IO ()
 main = PNT.serve (PNT.Host "127.0.0.1") "23456" $
